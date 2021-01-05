@@ -43,11 +43,11 @@ class AlarmReceiver : BroadcastReceiver() {
             if (type.equals(TYPE_ONE_TIME, ignoreCase = true)) ID_ONETIME else ID_REPEATING
 
         showToast(context, title, message)
+        showAlarmNotification(context, title, message, notifId)
     }
 
     private fun showToast(context: Context, title: String, message: String?) {
         Toast.makeText(context, "$title : $message", Toast.LENGTH_LONG).show()
-
     }
 
     fun setOneTimeAlarm(
@@ -86,7 +86,7 @@ class AlarmReceiver : BroadcastReceiver() {
     private fun showAlarmNotification(
         context: Context,
         title: String,
-        message: String,
+        message: String?,
         notifId: Int
     ) {
         val CHANNEL_ID = "Channel_1"
