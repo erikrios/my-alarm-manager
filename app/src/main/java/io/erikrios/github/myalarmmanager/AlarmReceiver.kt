@@ -80,7 +80,6 @@ class AlarmReceiver : BroadcastReceiver() {
         alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.timeInMillis, pendingIntent)
 
         Toast.makeText(context, "One time alarm set up", Toast.LENGTH_LONG).show()
-
     }
 
     private fun showAlarmNotification(
