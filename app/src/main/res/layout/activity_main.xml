@@ -137,8 +137,6 @@
             android:text="@string/cancel_alarm"
             tools:ignore="ButtonStyle" />
 
-
     </LinearLayout>
-
 
 </LinearLayout>
