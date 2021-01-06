@@ -73,9 +73,10 @@ class MainActivity : AppCompatActivity(), View.OnClickListener,
                     repeatMessage
                 )
             }
-            binding?.btnCancelRepeatingAlarm?.id -> {
-
-            }
+            binding?.btnCancelRepeatingAlarm?.id -> alarmReceiver.cancelAlarm(
+                this,
+                AlarmReceiver.TYPE_REPEATING
+            )
         }
     }
 
