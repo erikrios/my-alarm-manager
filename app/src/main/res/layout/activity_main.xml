@@ -112,10 +112,33 @@
         android:importantForAutofill="no"
         android:inputType="text" />
 
-    <Button
-        android:id="@+id/btn_set_repeating_alarm"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/set_repeating_alarm" />
+        android:gravity="center_vertical"
+        android:orientation="horizontal"
+        android:weightSum="2">
+
+        <Button
+            android:id="@+id/btn_set_repeating_alarm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="8dp"
+            android:layout_weight="1"
+            android:text="@string/set_repeating_alarm"
+            tools:ignore="ButtonStyle" />
+
+        <Button
+            android:id="@+id/btn_cancel_repeating_alarm"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_weight="1"
+            android:text="@string/cancel_alarm"
+            tools:ignore="ButtonStyle" />
+
+
+    </LinearLayout>
+
 
 </LinearLayout>
