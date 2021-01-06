@@ -29,6 +29,8 @@ class MainActivity : AppCompatActivity(), View.OnClickListener,
         binding?.btnOnceDate?.setOnClickListener(this)
         binding?.btnOnceTime?.setOnClickListener(this)
         binding?.btnSetOnceAlarm?.setOnClickListener(this)
+        binding?.btnRepeatingTime?.setOnClickListener(this)
+        binding?.btnSetRepeatingAlarm?.setOnClickListener(this)
 
         alarmReceiver = AlarmReceiver()
     }
@@ -54,6 +56,20 @@ class MainActivity : AppCompatActivity(), View.OnClickListener,
                     onceDate,
                     onceTime,
                     onceMessage
+                )
+            }
+            binding?.btnRepeatingTime?.id -> {
+                val timePickerFragmentRepeat = TimePickerFragment()
+                timePickerFragmentRepeat.show(supportFragmentManager, TIME_PICKER_REPEAT_TAG)
+            }
+            binding?.btnSetRepeatingAlarm?.id -> {
+                val repeatTime = binding?.tvRepeatingTime?.text.toString()
+                val repeatMessage = binding?.edtRepeatingMessage?.text.toString()
+                alarmReceiver.setRepeatingAlarm(
+                    this,
+                    AlarmReceiver.TYPE_REPEATING,
+                    repeatTime,
+                    repeatMessage
                 )
             }
         }
